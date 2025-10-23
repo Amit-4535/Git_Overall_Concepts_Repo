@@ -28,3 +28,15 @@ git add -A
 we can commmit the changes by the command -->
 
 git commit -m "message to the commit"
+
+
+check the current status of the directory. (whether the file is stagged or not? whether the file is commited or not? (basically we can check the status of the files and the folders in the current directory ))
+
+git status
+
+check the logs of the files (like the commiting history)
+
+git log
+git log --oneline
+git log --pretty=oneline
+git log -p -1
