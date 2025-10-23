@@ -1,4 +1,17 @@
 
+
+Merge
+Combines two branches, preserving their separate history
+Rebase
+Re-applies your branch commits on top of another branch, creating a linear history
+
+
+🎯 When to Use
+Use Case	                                  Preferred Operation
+Public/shared branches (like main, develop)	✅ merge (safe, non-destructive)
+Local feature branch before PR           	✅ rebase (clean history, linear commits)
+
+
 git merge
 
 check the merege and the rebase operations
@@ -20,3 +33,17 @@ command to merge is -- git merge branchname
 and you can check the detailed commit details by the command --  git log --graph –oneline
 
 
+
+
+git rebase
+
+
+git rebase is similar to the merge operation, but few changes are there.
+
+this rebase operation is used to merge the changes from one branch to the another branch
+
+when you do the rebase, you will not get the additional commit of the merging.
+
+you will get the linear history of the commit message.
+
+command --  git rebase branchname
