@@ -1,0 +1,14 @@
+
+
+This will only change the last commit ID (most recent commit)
+
+use case --> let us suppose i have did the wrong commit, so through this amend operation i can do the changes and can correct the commit message....
+
+
+command --  git commit --amend
+
+we can change the author name as well throgh this commit 
+
+git commit --amend --author "Amit Kharse <amitkharse92@gmail.com>" -m "changed author message here"
+
+
