@@ -11,4 +11,4 @@ we can change the author name as well throgh this commit
 
 git commit --amend --author "Amit Kharse <amitkharse92@gmail.com>" -m "changed author message here"
 
-
+you can change the date of the commit as well through this amend operations
