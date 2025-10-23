@@ -1,4 +1,22 @@
 
-
+git merge
 
 check the merege and the rebase operations
+
+git merge basically used to merge the one branch code/commitsID's to the other branch.
+
+when you do the git merge then new commit id (merging commit ID will be gerating), 
+
+note -- in the fast-forward concept merging commit will not be generating (both the branches will show you the current commit will be the pointing commitid)
+fast forward means in whatever branch you are and trying to merge the commits, this branch is behind the newbranch (from which branch you are trying to merge).
+
+in practicle scenario --> 
+
+when you do the git merge then new merging commit will be generating
+you will not get the linear history of the commit ids.
+
+command to merge is -- git merge branchname
+
+and you can check the detailed commit details by the command --  git log --graph –oneline
+
+
