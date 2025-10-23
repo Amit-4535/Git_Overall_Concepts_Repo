@@ -1,0 +1,20 @@
+
+
+cherry picking
+
+
+This cherry picking operations useful for copying the particular single commit from one branch to the another branch.
+
+example --> let us say i have master and the develop brach, and i am having multiple commits in those branches..
+
+now the use case is, i dont want to merge all the changes which is in develop branch to the master branch, instead i want to copy the single commit from develop branch to the mmaster branch.
+
+now i need to switch to the develop branch by command --> git checkout develop 
+copy the commit id, which you want to be a part of the other branch like master. (now the commitID is copied)
+now go back again to the master branch and use the command --> git checkout master
+
+and for cherry-pick use the command --> git cherry-pick commitID
+(paste your commit id here)
+
+
+by this way we can copy a single commit from one branch to another branch instead of merging or rebasing.
