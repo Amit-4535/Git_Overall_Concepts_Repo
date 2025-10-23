@@ -1,0 +1,21 @@
+
+
+git restore
+
+
+git restore is a modern Git command introduced to simplify undoing changes in your working directory or staging area.
+
+Example 1  let us say you are working on mywork file and you added some changes and added this file.. now again edited this file and added another changes  now the requirement is I need an earlier data not the new one  then in this case I can use below operation to undo the changes 
+
+
+Git restore filename 
+
+  it will provide you the earlier data.. 
+
+
+(after git add and committing you can not restore the data in that file)
+
+
+so for retriving the earlier data you need to perform this operation before
+
+git add and the git commit operations..
