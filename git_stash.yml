@@ -1,0 +1,33 @@
+
+
+git stash
+
+
+
+You are creating stash operation when you are working on files and those files added but not committed yet..
+
+
+What is git stash?
+git stash temporarily saves your uncommitted changes (both staged and unstaged) and restores your working directory to a clean state. It’s very useful when:
+•	You're in the middle of work, but need to switch branches.
+•	You want to save progress without committing.
+•	You want to test something else briefly, then come back.
+
+
+Use command  git stash list 	 to check all available stashes
+
+Create new stash  git stash save “mention message here” 	 new stash will be created
+
+Apply to that stash  git stash apply stash@{3} 		 apply to this stash, so you can start work       on this operation where you left earlier..
+
+Drop particular stash id  git stash drop stash@{0}  	 drop the particular stash id
+
+Apply and remove the stash (most common) (apply and delete the stash)  git stash pop
+
+Command  git stash pop stash@{0}  		 it will apply and immediately delete stash id
+
+Stash with custom message   git stash push -m "Incomplete UI layout for dashboard"
+
+Remove all the stashes at a time   git stash clear  	 removing all the stashes at one go..
+
+
