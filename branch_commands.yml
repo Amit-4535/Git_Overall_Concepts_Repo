@@ -1,0 +1,47 @@
+
+
+
+Below are some important commands of the branches.
+
+
+to see the available branches
+git branch
+
+
+to switch from one branch to another branch
+git checkout branchname
+git switch branchname
+
+
+creating the branch
+git branch branchname
+
+
+create branch and switch to that branch
+git checkout -b branchname
+
+
+
+command to delete the local branch
+git branch -d branchname
+git branch -D branchname
+
+
+to push the branch from local to the remote
+git push origin branchname
+
+you can push all the branches at a one time
+git push --all branchname
+
+to check the remote all the branches
+git branch -r
+
+
+to delete the remote branch from your local branch
+git push origin --delete branchname
+
+you can delete all the branches except the master or the main branch
+
+git branch -r | grep -vE "origin/(HEAD|master|main)$" | sed 's/origin\///' | xargs -I {} git push origin --delete {}
+
+
