@@ -1,0 +1,15 @@
+
+
+git forks
+
+A fork is a personal copy of someone else’s repository on your own GitHub account.
+•	You don’t need to clone the original repo directly.
+•	You fork it to your account, then clone your own copy to your local system.
+•	You can make changes freely without affecting the original repository.
+
+If you are forking someone else repository then we are performing the following operations.
+Just go to that repo -- on right side corner we have option called fork
+Once clicked on that fork button you will redirected to your repository
+Enter name to the repository  name to forked repository
+Enter description and then click on create fork button  done  now you have someone’s repository in your account..
+
