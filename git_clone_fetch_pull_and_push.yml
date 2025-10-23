@@ -24,3 +24,31 @@ so we required basically 2 commands here.
 git fetch  &&
 
 git merge origin/branchname
+
+
+
+
+git pull 
+
+the git pull operation we can use to pull the changes from the remote repository..
+in the pull operation the merge option is not silent, that means automatically merging is enabled here, not like the fetch, (in fetch we are performing the merging operation), but in the pull operation we do not need to perform the merge operation here, bydefault this option is enabled.
+
+so we required only one command.
+
+git pull origin branchname
+
+or just the
+
+git pull
+
+
+
+git push
+
+the git push operation we are performing when we want to move/push all the files from our local repository to the remote repository.. so basically pushing the changes we are performing the push operation here.
+
+command -- git push origin branchname
+
+or just the 
+
+git push
