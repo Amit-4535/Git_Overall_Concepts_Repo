@@ -1,0 +1,26 @@
+
+
+git clone
+
+The git clone operation basically used to clone the exact copy of the repository. from the remote branch to the local branch.
+
+
+command --  git clone repository_url
+
+(this command will clone exact copy of the remote repository on to your local repository...)
+
+
+
+
+
+git fetch 
+
+The git fetch operation basically pull the changes from the remote repository to the local repository.
+git fetch will pull all the recent and modified changes to your local repository, but you can not see the changes until you are not merging them to the current branch.
+here the merge operation is silent, we need to perform this and then only checnges will be visible to us..
+
+so we required basically 2 commands here.
+
+git fetch  &&
+
+git merge origin/branchname
