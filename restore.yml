@@ -10,7 +10,7 @@ Example 1  let us say you are working on mywork file and you added some chang
 
 Git restore filename 
 
-  it will provide you the earlier data.. 
+ it will provide you the earlier data.. 
 
 
 (after git add and committing you can not restore the data in that file)
