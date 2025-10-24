@@ -21,5 +21,16 @@ When to use git squash 
 
 
 
+Now you want to end up with 1 commit instead of 3 commits then now 
 
+Use command  git rebase -I HEAD~3
+
+Then one terminal will open  keep pick for those commits which you want to pick the commit and squash for those commits which you don’t want to be the part of your commit..
+Now again another terminal open for the commit message, you can edit that and save that file again..
+	Now you are able to see that 3 commits are end up with the one commit.. by using command  git log –oneline
+
+
+Let us say you have performed git squash operation and then you can see the (|REBASE) in the place of master, and now you wanted to come out from that then use command 
+
+rm -fr ".git/rebase-merge"       (useful command to come out from rebase operation)
 
