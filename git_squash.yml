@@ -1,0 +1,25 @@
+
+
+Git Squash
+
+
+To reducing the number of commits and can end up with a few commits, we can do this by the git squash operation.
+
+
+Let us say I am having one feature branch and I have created 10 commits inside it, and now I feel that these much commits I don’t required then I can reduce the commit ids as well by the operations git squash..
+
+Squashing in Git means combining multiple commits into a single one
+
+usually done to keep the Git history clean.
+
+It’s most commonly used in feature branches before merging into main or develop..
+
+When to use git squash  
+•  Cleaning up messy commit history (e.g., fix typo, test, final version)
+•  Combining commits for better readability before a PR/merge
+•  During an interactive rebase
+
+
+
+
+
