@@ -1,0 +1,65 @@
+
+
+git reset
+
+
+basically we have 3 types inside the reset operation 
+	--soft reset
+ 	--mixed reset
+	--hard reset
+
+
+1)	--soft reset 
+
+What It Does:
+•	Removes the latest commit from the history
+•	Keeps your code changes staged (ready for commit)
+
+Command  git reset --soft HEAD~1
+
+If you fire this command then you can see your recent commit is deleted, and now HEAD is pointing to the next commit automatically..
+ but the files for which the commit is created still exist for stagged operation.. (we are only deleting the commit basically.. file still will be there)
+note  once use this command  git reset --soft HAED~1  then you can see that commit message is removed from the history.. file still present there but it is not commited  if you fire the command git status  then you can see that recent file is showing  this files needs to be committed..
+
+files needs to be commited
+
+
+2)	--mixed  reset 
+
+  Git moves HEAD from recent commit to next below commit
+  The code from is still on disk (your file is still there)
+  But it’s now unstaged (not ready for commit)
+Command  git reset --mixed HEAD~1
+						What this command will do ? it is removing the commit id from the history 
+Then it will show the file needs to be added
+That means whatever add and and commit operation we done before the reset those operation is got cancelled and now you can see after using git reset –mixed operation that file coming from committing to needs to be added stage..
+
+
+
+3)	--hard reset 
+
+•	Removes the latest commit
+•	Deletes the code changes from working directory
+•	Basically wipes everything as if commit 26ea74d and its changes never happened
+
+Command  git reset --hard HEAD~1
+
+nothing to commit, working tree clean
+so by using --hard  reset  you can delete the recent commits and also delete the files which was created earlier for that commit..
+
+
+
+very useful example here 
+
+After --soft HEAD~1:
+•	HEAD moves to 14th commit
+•	15th file: still staged for commit
+________________________________________
+After --mixed HEAD~1:
+•	HEAD moves to 14th commit
+•	15th file: on disk, but not staged
+________________________________________
+After --hard HEAD~1:
+•	HEAD moves to 14th commit
+•	15th file: gone from history and disk
+
