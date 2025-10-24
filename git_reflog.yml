@@ -1,0 +1,38 @@
+
+
+
+Git Reflog
+
+
+getting deleted history back again
+
+Git reflog command is used to get the changes or commits back again which was deleted from you by mmistakenly..
+
+		git reflog = Reference Log
+
+
+
+It records every movement of HEAD and branch references, even those not in commit history anymore.
+
+
+In simple words:
+git reflog is a diary of all recent Git actions — including commits, checkouts, resets, rebases, etc.
+Even if a commit is "lost" (e.g., via reset --hard), it still appears in reflog.
+
+
+Run command  git reflog
+
+
+Through this command you will get the history of everything
+
+you can find your appropriate id and move to that, let us say you have deleted something wrongly and that data you need back again then  use command  git checkout HEAD@{1}
+
+By this command you can switch to that task even if its deleted.. it will provide data back again  now if required do changes in your required files here.. the add those changes and commit those changes..
+
+
+Now important  Create a branch from your current (detached) commit
+git checkout -b temp-recovered-branch
+Merge the recovered commits into your branch
+git merge temp-recovered-branch
+now if you required this changes in other branch then you can merge these changes in another branch as well..
+
