@@ -1,0 +1,41 @@
+
+
+Branching Strategy
+
+
+1.	main/master branch
+
+o	Always production-ready.
+o	Contains only stable, released code.
+o	Every production deployment comes from main.
+
+
+2.	develop branch
+
+o	Created from main.
+o	Used as the integration branch for all upcoming features.
+o	Merges back into main only at the time of a release.
+
+
+3.	feature/* branches
+
+o	Created from develop.
+o	Each feature/bug/task gets its own branch.
+o	After the feature is complete → merged back into develop.
+
+
+4.	release/* branches
+
+o	Created from develop when you’re preparing for a release.
+o	Used for final testing, bug fixes, version bump, etc.
+o	After testing → merged into both main (for production) and develop (to keep it updated).
+
+
+5.	hotfix/* branches
+
+o	Created directly from main when there’s a production issue.
+o	Fix is made and tested here.
+o	Then merged back into both:
+	main (to apply the fix in production),
+	develop (to ensure the fix is also present in future releases).
+
