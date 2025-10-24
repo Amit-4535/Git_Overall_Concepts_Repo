@@ -1,2 +1,6 @@
 Hello World
+
 Change from branch1
+
+Change from branch2
+

@@ -1,0 +1,114 @@
+
+
+Set up a test repository
+
+mkdir git-conflict-demo
+cd git-conflict-demo
+
+
+git init
+
+# Create a test file
+echo "Hello World" > file.txt
+
+# Add and commit
+git add file.txt
+git commit -m "Initial commit"
+
+
+
+Create two branches
+
+# Create and switch to branch1
+git checkout -b branch1
+# Modify the file
+echo "Change from branch1" >> file.txt
+git add file.txt
+git commit -m "Update from branch1"
+
+
+# Switch back to master
+git checkout master
+
+
+# Create branch2
+git checkout -b branch2
+# Modify the same line in the file
+echo "Change from branch2" >> file.txt
+git add file.txt
+git commit -m "Update from branch2"
+
+
+
+Merge branch2 into branch1
+# Switch to branch1
+git checkout branch1
+
+# Try to merge branch2
+git merge branch2
+
+
+
+now you can observe the conflicts
+
+Auto-merging file.txt
+CONFLICT (content): Merge conflict in file.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+
+
+Resolve the conflict
+
+Open file.txt, you’ll see markers like:
+  Hello World
+<<<<<<< HEAD
+Change from branch1
+=======
+Change from branch2
+>>>>>>> branch2
+
+
+
+
+HEAD → current branch (branch1)
+
+======= → separator
+
+branch2 → incoming changes from merged branch
+
+Decide what the final content should be. For example:
+
+
+
+  Hello World
+Change from branch1
+Change from branch2
+
+
+Or choose only one change.
+
+Remove the <<<<<<<, =======, and >>>>>>> markers.
+
+
+
+Mark the conflict as resolved
+git add file.txt
+
+Commit the merge
+git commit -m "Resolved merge conflict between branch1 and branch2"
+
+
+
+Verify
+git log --graph --all --oneline
+
+
+
+You’ll see the branches merged successfully.
+
+
+
+
+
+
+
