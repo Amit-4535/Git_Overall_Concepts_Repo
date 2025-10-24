@@ -1,0 +1,44 @@
+
+
+Github Hook Trigger
+
+
+GitHub hook trigger allows Jenkins to automatically run a job (like build, test, deploy) as soon as changes are pushed to a GitHub repository — without polling manually.
+
+It uses webhooks: GitHub sends an HTTP POST request to Jenkins when a specific event (like a push) happens.
+
+
+Note  We are setting this github hook trigger in between our Jenkins job and with github repository, so as soon as when developer is doing the changes, then automatically Jenkins will pull the code and will start the job..
+
+
+Why Do We Use GitHub Hook Trigger?
+Benefit	                Explanation
+🚀 Automation	        Automatically run Jenkins jobs on every code change (CI/CD)
+🕒 Faster Feedback	You get instant build/test feedback after push
+⚙️ No Polling Needed	Jenkins doesn’t have to check GitHub repeatedly
+✅ Better Efficiency	Saves resources and speeds up pipelines
+
+
+Create a job in Jenkins named  Run-GitHub-Scripts
+-	Now configure the job
+-	Add description if required to the project.
+-	In source code management  select option git and mention your repository url.  in branch specific mention your codebase branch  I am mentioning my master branch here. */master
+
+-	In triggers option  select GitHub hook trigger for GITScm polling option.
+-	Now add details or scripts in build step stage if required..  save and apply the job..
+-	Now the Jenkins job configuration task is completed..
+
+
+-	Now move to the github application, to setup an github hook triggers..
+-	Now come to your repository and go to the setting
+-	in setting select webhook option
+-	click on add webhook
+-	add your payroll url here   like this  http://54.86.143.207:8080/github-webhook/
+(here in this payload url https://public ip of your instance: then port/ then mention github-webhook/) add this in the payload url
+
+-	in content type select option  application/json
+-	and in event in option (Which events would you like to trigger this webhook?)  select option  Just the push event.
+-	And then click on add webhook
+
+
+Now your github webhook is triggered successfully, now whenever developer are pushing there changes on github repository, then Jenkins will fetch the code from repository and will start the job immediately.. so for this reason we are using github webhook trigger option..
