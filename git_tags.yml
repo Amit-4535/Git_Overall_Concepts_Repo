@@ -1,0 +1,36 @@
+
+
+Git Tag
+
+
+	A Git tag is like a label or bookmark for a specific commit.
+
+
+There are two types:
+1.	Lightweight Tag — like a branch that never moves
+2.	Annotated Tag — saved as a full Git object with metadata (recommended for releases)
+
+
+Create the tag   git tag v1.0
+Tags the latest commit on your current branch.
+
+
+Create Annotated tags   git tag -a v1.0 -m "Initial release version 1.0"
+  -a = annotated
+  -m = message (appears in tag history)
+
+
+Create tags to the existing commit / earlier commits 
+git tag -a v1.0.2 0abe90c -m "Tagging earlier release"
+
+
+we can get all the tags which is starting with the v1  git tag -l "v1.*"
+
+we can push the tags as well  git push origin v1.0.2
+
+ pushing all the tags at a time   git push origin --tags
+
+ you can delete the tags  git tag -d v1.0
+
+
+ you can delete the tags on remote by   git push origin --delete v1.0
