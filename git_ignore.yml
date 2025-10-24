@@ -3,6 +3,12 @@
 gitingnore file
 
 
+you can see all ignored files:
+  git status --ignored
+
+
+
+
 The .gitignore file tells Git which files or directories to ignore — meaning Git will not track, stage, or commit them.
 
 Why Use .gitignore?
@@ -14,15 +20,47 @@ Speed up performance	                  Large folders not needed in repo
 
 -	Now create the .gitignore file by command  touch .gitignore
 -	Mention this below things inside the .gitignore file…
--	Add patterns to ignore  # Ignore all .log files *.log
--	 #Ignore environment file  .env
--	# Ignore all files in temp/ directory  /tmp
--	# Ignore compiled files
-        *.class
-        *.pyc
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Node
+node_modules/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+env/
+venv/
+
+# Java / Maven / Gradle
+target/
+*.class
+*.jar
+
+# Build output
+/dist/
+/build/
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+
+# Secrets / env
+.env
+.secret
 
 
-Note  already created files  *.log/.env/*.class/*.pyc  Already Tracked Files Won’t Be Ignored..
+
+note -- already created files  *.log/.env/*.class/*.pyc  Already Tracked Files Won’t Be Ignored..
 
 
 now for demo purpose add some file here of the extension *.log/.env / *.class and *.pyc
