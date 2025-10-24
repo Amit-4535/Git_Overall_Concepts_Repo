@@ -1,0 +1,46 @@
+
+
+git revert
+
+
+git revert is similar to the hard reset command, but having the difference here and the difference is,
+when you do the git revert then changes will be delteted but the commit history will be there, you will get the commit history..
+
+git revert creates a new commit that undoes the changes introduced by a previous commit — without changing the commit history.
+
+- commit history of deleted file and the new file as well.
+
+syntax -- git revert <commit_id>
+
+This makes a new commit that reverses the changes from <commit_id>.
+
+
+Step-by-Step Example
+
+Check your commit history
+git log --oneline
+
+
+Revert a specific commit
+git revert b6a1c8d
+
+
+This will:
+
+Open your editor to write a commit message (you can save/close it)
+
+Create a new commit that undoes the changes from b6a1c8d
+
+
+Result:
+  a3f5b2e Fix login bug
+d9e4f1a Revert "Add login page"
+b6a1c8d Add login page
+c1e2d3f Initial commit
+
+
+
+you can Revert multiple commits (in one go)
+
+git revert HEAD~2..HEAD
+
