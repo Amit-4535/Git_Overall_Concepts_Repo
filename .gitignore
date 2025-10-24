@@ -1,7 +1,0 @@
- *.log	
- .env
- /tmp
-# Ignore compiled files
-*.class
-*.pyc	
-
