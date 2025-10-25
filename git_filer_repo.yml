@@ -1,0 +1,57 @@
+
+
+git filter-repo
+
+
+git filter-repo is a Git tool that helps you rewrite Git history — safely and efficiently.
+It replaces the older git filter-branch and BFG Repo-Cleaner.
+
+
+You use it when you want to:
+
+🚫 Remove sensitive data (like passwords or API keys) from your Git history
+
+🧹 Remove large files to reduce repo size
+
+🏷 Rename folders or move files in all commits
+
+👤 Change commit authorship across all commits
+
+📂 Split or merge repositories
+
+
+
+Install pipx (if not installed)
+
+sudo apt update
+sudo apt install pipx -y
+pipx ensurepath
+
+
+check the version of the python.
+python3 --version
+
+
+
+install the pipx by the command 
+sudo apt install pipx -y
+
+now install the git filter-repo
+
+
+Add pipx and git-filter-repo to PATH
+
+Since it’s installed in /root/.local/bin, run this:
+  export PATH="$PATH:/root/.local/bin"
+
+
+  To make this permanent (so it works even after reboot), add it to your shell config:
+    echo 'export PATH="$PATH:/root/.local/bin"' >> ~/.bashrc
+source ~/.bashrc
+
+
+verify installations
+git filter-repo --version
+
+
+
