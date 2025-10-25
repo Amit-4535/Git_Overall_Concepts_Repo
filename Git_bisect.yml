@@ -1,0 +1,107 @@
+
+
+Git Bisect 
+
+
+git bisect uses binary search to find the exact commit that introduced a bug or broke something. (basically for finding the bad commit we are using the git bisect operation)
+
+It works by, you telling Git:
+•	✅ a commit where things were good
+•	❌ a commit where things are bad
+
+
+Then Git will automatically:
+•	Check out intermediate commits
+•	Ask you to mark them as good or bad
+•	Narrow down the culprit commit
+
+
+Lab for bisect
+
+
+-	git checkout feature
+-	Create and commit working code (good state)
+echo "print('Salary is correct')" > salary.py
+git add salary.py
+git commit -m "✅ Commit 1: Working salary function"
+
+
+
+
+
+-	Modify file - still correct
+echo "# comment added" >> salary.py
+git add salary.py
+git commit -m "✅ Commit 2: Added comment, still works"
+
+
+
+
+-	Introduce bug (Bad commit)
+echo "print('Wrong Salary')" > salary.py
+git add salary.py
+git commit -m "❌ Commit 3: Bug introduced in salary"
+
+
+
+
+-	One more commit (bug still present)
+echo "# additional bad logic" >> salary.py
+git add salary.py
+git commit -m "❌ Commit 4: More changes with bug"
+
+
+
+
+-	Now you have history in feature 
+A → ✅ Commit 1: Working
+B → ✅ Commit 2: Still working
+C → ❌ Commit 3: Bug introduced
+D → ❌ Commit 4: Still broken
+
+
+
+  operations
+
+-	Perform git bisect 
+-	Start bisect
+git bisect start
+
+
+-	Mark current commit as bad (HEAD — bug is there)
+git bisect bad
+
+
+
+-	Mark oldest commit as good
+git bisect good HEAD~3
+Now Git will checkout a middle commit between good and bad.
+
+
+
+-	Test the current checked-out version
+Manually inspect salary.py
+cat salary.py
+If it says:
+•  "Salary is correct" → it's good → git bisect good
+•  "Wrong Salary" → it's bad → git bisect bad
+
+
+
+
+Git will keep checking out middle commits and narrow it down.
+Repeat Step 9 until Git prints:
+<commit-id> is the first bad commit
+End bisect  git bisect reset
+
+
+
+
+✅ Summary
+Step	Command
+Start bisect	git bisect start
+Mark bad commit	git bisect bad
+Mark good commit	git bisect good <commit>
+Mark middle commits	git bisect good or git bisect bad
+Finish session	git bisect reset
+
