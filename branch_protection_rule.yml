@@ -1,0 +1,42 @@
+Branch Protection Rule 
+
+
+We are setting an branch protection rule here because we are preventing the others to do the unwanted things in github..
+
+GOAL: Secure GitHub Collaboration & Permissions
+💡 You want to:
+1.	🔒 Protect branches like main
+2.	👥 Add team members or collaborators
+3.	🛡️ Restrict what others can do (read-only, PR only, review mandatory, etc.)
+4.	🧾 Set merge rules (e.g., require review, CI to pass)
+
+
+
+Add collaborator or user to your github Repository 
+-	Go to repo
+-	Setting  collaborator
+-	Select add people
+-	Enter name of your user and  select add to Repository..
+-	Choose there permissions 
+1)	Read		 Can only view repo
+2)	Write 		 Can push to non-protected branches
+3)	Triage 		 Label issues/PRs, manage without write
+4)	Admin		 Full access including repo settings
+5)	Maintain	 Manage issues, pull requests, some settings
+6)	Custom       	 Granular control
+
+
+Protect the main Branch (Enforce PR-based Workflow) 
+
+-	GitHub → Repo → Settings > Branches
+-	Under Branch protection rules, click Add rule or ruleset
+-	Name to the ruleset
+-	Target branches  add your branches here (add those branches for which we are creating the ruleset)
+-	Recommended Rules:
+-	✅ Require pull request before merging	Enforce PRs
+✅ Require approvals	Select min. 1 reviewer
+✅ Require status checks to pass	Enforce CI (like Jenkins)
+✅ Require up-to-date with base branch	Prevent merge if out of sync
+⛔ Prevent force-push	Disallow git push --force
+⛔ Prevent deletion	Disallow branch deletion
+

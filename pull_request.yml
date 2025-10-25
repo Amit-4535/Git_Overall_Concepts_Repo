@@ -1,0 +1,30 @@
+
+
+pull requests
+
+
+	A Pull Request is a request to merge code from one branch into another, usually from a feature branch into the main or develop branch.
+
+
+Whatever developer are doing the changes on there local those changes they will push to the remote repo.. and they will create the Pull Request for that code.. reason  they will check the code is working properly or not through the Jenkins tool, and if code is working fine or pipeline green then they can merge the code to the codebase branch.. and if code is not working properly then they will again work on that code.. so for this reason we are using pull request operation here..
+
+Lab for Pull Request
+
+I am having 2 branches  1 is master and 2  is develop..
+-	I have created the develop branch from the master.
+-	Now I am in develop branch and added some code and worked on extra code related to my task.. now after completing the task I have added and committed the changes.. now I can push the changes to the remote repository on my develop branch by command 
+Git push origin develop
+Now I can see my changes on remote repo and in branch develop.. if you check the commit history then you will be able to see the changes..
+
+
+-	Now select create pull request  select your codebase branch and the branch where you added new code..
+-	Select compare  now you will be able to see the difference in between your develop and master branch (means the difference in codebase and working branch)
+-	After compare select create pull request
+-	Add title to that pull request  add description to your pull request and select create a pull request..
+-	Now check your Jenkins pipeline is successful or not, if it is successful then you can merge the pull request.. if code is failing then work on that code again..
+
+
+Note  you can see the available pull requests on pull request section..
+Closed and opens (pull requests)
+Who created this pull request that information you can also get..
+
