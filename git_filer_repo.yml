@@ -54,4 +54,82 @@ verify installations
 git filter-repo --version
 
 
+Step 3 — Let’s remove a file from history
+For demonstration, let’s assume we want to remove debug.log (you can replace this with any file/folder later).
+Run this command:
+  git filter-repo --path debug.log --invert-paths --force
+
+
+  Explanation:
+
+--path debug.log → target the file we want to remove
+
+--invert-paths → remove it from all commits (instead of keeping)
+
+--force → override the “not a fresh clone” safety check
+
+
+After running this, run the following verification commands:
+  # List files (should still show all working files, but debug.log is gone from history)
+ls
+
+# Check history for the file
+git log --stat | grep debug.log
+
+
+📌 Paste the output here so we can confirm that debug.log has been completely removed from all commits.
+
+
+
+git filter-repo execution
+Parsed 57 commits
+New history written...
+Completely finished after 0.07 seconds
+
+
+This confirms that all 57 commits were scanned and the file debug.log was completely removed from history.
+No trace of it exists in any commit anymore.
+
+
+ls output
+HEAD  branches  config  description  filter-repo  hooks  info  objects  packed-refs  refs
+
+This is a bare mirror clone, so it doesn’t show working files like a normal repo.
+
+That’s expected — mirror clones store everything internally.
+
+
+git log --stat | grep debug.log
+No output — ✅ confirms the file was fully removed from all commits.
+
+
+Next Step: Clean up old refs
+
+After filtering, Git keeps backup references in .git/refs/original/ and pack files. We can remove them and compress the repo to finalize the cleanup.
+
+Run these commands in the mirror clone:
+  rm -rf refs/original/
+git reflog expire --expire=now --all
+git gc --prune=now --aggressive
+
+
+After this, the repo is fully cleaned and ready.
+
+
+Step 4 — Optional: Push changes back to original repo
+
+If you want to replace your original repo with this cleaned history, you can:
+
+Go to your original repo (or create a new clone from this mirror):
+  git clone /home/ubuntu/Git_Overall_Concepts_Repo_mirror Git_Overall_Concepts_Repo_Clean
+cd Git_Overall_Concepts_Repo_Clean
+
+
+
+Add the remote (if needed) and force push:
+  git remote add origin https://github.com/Amit-4535/Git_Overall_Concepts_Repo.git
+git push origin master --force
+
+
+
 
