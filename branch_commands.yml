@@ -31,7 +31,7 @@ to push the branch from local to the remote
 git push origin branchname
 
 you can push all the branches at a one time
-git push --all branchname
+git push --all origin
 
 to check the remote all the branches
 git branch -r
