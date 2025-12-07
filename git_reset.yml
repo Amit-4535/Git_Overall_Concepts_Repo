@@ -2,6 +2,20 @@
 
 git reset
 
+To undo commits (move HEAD backward)
+If you committed something by mistake, wrong code, or incomplete code, you can move the branch back to a previous commit.
+
+To unstage files (remove from staging)
+If you added files using git add but don’t want them staged now:
+git reset file.txt
+
+This only removes the file from staging, not from the working directory.
+
+🚦 Three types of reset (IMPORTANT)
+Type				What it resets					When to use
+--soft				Moves HEAD only					Undo last commit but keep changes staged
+--mixed (default)	Moves HEAD + Unstage files		Undo commit and unstage changes
+--hard				HEAD + staging + working dir	Discard everything and go back to an earlier commit
 
 basically we have 3 types inside the reset operation 
 	--soft reset
